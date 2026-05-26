@@ -8,8 +8,6 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif; background: #f5f5f7; color: #1d1d1f; min-height: 100vh; padding: 40px 20px 80px; }
     .page { max-width: 720px; margin: 0 auto; }
-
-    /* ── Login screen ── */
     .login-screen { display: flex; align-items: center; justify-content: center; min-height: 100vh; padding: 20px; }
     .login-card { background: white; border-radius: 20px; padding: 40px; width: 100%; max-width: 380px; box-shadow: 0 4px 24px rgba(0,0,0,.08); }
     .login-card h2 { font-size: 22px; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.02em; }
@@ -21,11 +19,9 @@
     .btn-login { width: 100%; background: #0071e3; border: none; border-radius: 10px; color: white; font-size: 15px; font-weight: 600; font-family: inherit; padding: 13px; cursor: pointer; margin-top: 8px; transition: background 0.15s; }
     .btn-login:hover { background: #0077ed; }
     .login-error { color: #ff3b30; font-size: 13px; margin-top: 10px; min-height: 18px; }
-
-    /* ── App ── */
     .app-screen { display: none; }
     .app-screen.on { display: block; }
-    .header { margin-bottom: 36px; }
+    .header { margin-bottom: 24px; }
     .header h1 { font-size: 28px; font-weight: 700; letter-spacing: -0.03em; color: #1d1d1f; margin-bottom: 16px; }
     .header-row { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
     .week-row { display: flex; align-items: center; gap: 8px; }
@@ -40,12 +36,18 @@
     .save-dot.error { background: #ff3b30; }
     .btn-logout { background: none; border: 1px solid #d2d2d7; border-radius: 8px; color: #86868b; font-size: 12px; font-family: inherit; padding: 5px 10px; cursor: pointer; transition: all 0.15s; }
     .btn-logout:hover { border-color: #ff3b30; color: #ff3b30; }
+    /* Nav tabs */
+    .nav-tabs { display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; }
+    .nav-tab { background: #f5f5f7; border: none; border-radius: 10px; color: #86868b; font-size: 13px; font-weight: 500; font-family: inherit; padding: 9px 16px; cursor: pointer; transition: all 0.15s; }
+    .nav-tab.active { background: #1d1d1f; color: white; }
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
     .section { background: white; border-radius: 16px; padding: 28px; margin-bottom: 12px; box-shadow: 0 1px 3px rgba(0,0,0,.06); }
     .section-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px; }
     .section-title { font-size: 15px; font-weight: 600; color: #1d1d1f; display: flex; align-items: center; gap: 8px; }
     .section-title .dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
     .dot-blue { background: #0071e3; } .dot-green { background: #30d158; } .dot-purple { background: #bf5af2; }
-    .dot-orange { background: #ff9f0a; } .dot-yellow { background: #ffd60a; }
+    .dot-orange { background: #ff9f0a; } .dot-yellow { background: #ffd60a; } .dot-red { background: #ff3b30; }
     .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 20px; }
     .stat-grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-bottom: 20px; }
     .stat { background: #f5f5f7; border-radius: 10px; padding: 14px 14px 12px; }
@@ -89,9 +91,9 @@
     .toggle input:checked + .t-slider { background: #30d158; }
     .toggle input:checked + .t-slider::before { transform: translateX(16px); }
     .ex-body { overflow: hidden; max-height: 0; transition: max-height 0.5s ease, opacity 0.3s; opacity: 0; }
-    .ex-body.open { max-height: 3000px; opacity: 1; }
+    .ex-body.open { max-height: 4000px; opacity: 1; }
     .ex-divider { height: 1px; background: #f0f0f5; margin: 4px 0 20px; }
-    .ex-tabs { display: flex; gap: 8px; margin: 20px 0 12px; }
+    .ex-tabs { display: flex; gap: 8px; margin: 20px 0 12px; flex-wrap: wrap; }
     .ex-tab { background: #f5f5f7; border: none; border-radius: 8px; color: #86868b; font-size: 13px; font-weight: 500; font-family: inherit; padding: 8px 14px; cursor: pointer; transition: all 0.15s; }
     .ex-tab.active { background: #0071e3; color: white; }
     .meeting-card { background: #f5f5f7; border-radius: 12px; padding: 14px; margin-bottom: 8px; }
@@ -100,8 +102,11 @@
     .meeting-card .field:last-child { margin-bottom: 0; }
     .meeting-card .field label { font-size: 11px; }
     .meeting-card input[type="text"] { font-size: 13px; padding: 8px 12px; }
+    .meeting-card textarea { font-size: 13px; min-height: 60px; }
     .btn-generate { display: block; width: 100%; background: #0071e3; border: none; border-radius: 12px; color: white; font-size: 15px; font-weight: 600; font-family: inherit; padding: 15px; cursor: pointer; margin: 20px 0 0; transition: background 0.15s; }
     .btn-generate:hover { background: #0077ed; }
+    .btn-newweek { display: block; width: 100%; background: #30d158; border: none; border-radius: 12px; color: white; font-size: 15px; font-weight: 600; font-family: inherit; padding: 15px; cursor: pointer; margin: 10px 0 0; transition: background 0.15s; }
+    .btn-newweek:hover { background: #28c14e; }
     .btn-clear { display: block; width: 100%; background: none; border: 1.5px solid #d2d2d7; border-radius: 12px; color: #86868b; font-size: 14px; font-weight: 500; font-family: inherit; padding: 12px; cursor: pointer; margin: 10px 0 12px; transition: all 0.15s; }
     .btn-clear:hover { border-color: #ff3b30; color: #ff3b30; }
     .output { display: none; }
@@ -111,6 +116,18 @@
     .btn-copy:hover { background: #e8e8ed; }
     .btn-copy.done { background: #d1f5da; color: #1a7f37; }
     pre { background: #f5f5f7; border-radius: 12px; padding: 20px; font-size: 12.5px; font-family: 'SF Mono', 'Fira Code', monospace; color: #3a3a3c; white-space: pre-wrap; word-break: break-word; line-height: 1.8; }
+    /* Archive */
+    .archive-item { background: white; border-radius: 12px; padding: 16px 20px; margin-bottom: 8px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 1px 3px rgba(0,0,0,.06); cursor: pointer; transition: box-shadow 0.15s; }
+    .archive-item:hover { box-shadow: 0 2px 8px rgba(0,0,0,.1); }
+    .archive-item-title { font-size: 14px; font-weight: 600; color: #1d1d1f; }
+    .archive-item-meta { font-size: 12px; color: #86868b; margin-top: 2px; }
+    .archive-item-arrow { color: #86868b; font-size: 18px; }
+    .archive-empty { text-align: center; color: #86868b; font-size: 14px; padding: 40px 0; }
+    /* Report selector */
+    .report-selector { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
+    .report-type-btn { background: #f5f5f7; border: none; border-radius: 8px; color: #86868b; font-size: 13px; font-weight: 500; font-family: inherit; padding: 8px 14px; cursor: pointer; transition: all 0.15s; }
+    .report-type-btn.active { background: #0071e3; color: white; }
+    .period-select { background: #f5f5f7; border: none; border-radius: 10px; color: #1d1d1f; font-size: 13px; font-family: inherit; padding: 8px 30px 8px 12px; outline: none; appearance: none; -webkit-appearance: none; cursor: pointer; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%2386868b'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 10px center; }
     @media (max-width: 580px) {
       .stat-grid { grid-template-columns: repeat(2, 1fr); }
       .stat-grid-2 { grid-template-columns: repeat(2, 1fr); }
@@ -162,89 +179,137 @@
       </div>
     </div>
 
-    <div class="section">
-      <div class="section-head">
-        <div class="section-title"><span class="dot dot-blue"></span>LinkedIn</div>
-      </div>
-      <div class="stat-grid">
-        <div class="stat"><span class="stat-name">Requests Sent</span><input type="number" id="li-sent" placeholder="0" min="0" /></div>
-        <div class="stat"><span class="stat-name">Connections</span><input type="number" id="li-conn" placeholder="0" min="0" /></div>
-        <div class="stat"><span class="stat-name">Messages Sent</span><input type="number" id="li-msgs" placeholder="0" min="0" /></div>
-      </div>
-      <div class="stat-grid-2">
-        <div class="stat"><span class="stat-name">Replies Received</span><input type="number" id="li-replies" placeholder="0" min="0" /></div>
-        <div class="stat"><span class="stat-name">Meetings Booked</span><input type="number" id="li-meetings" placeholder="0" min="0" /></div>
-      </div>
-      <div class="field"><label>Notes</label><textarea id="li-notes" placeholder="Key conversations, what worked..."></textarea></div>
+    <!-- Nav -->
+    <div class="nav-tabs">
+      <button class="nav-tab active" onclick="showTab('current')">📝 Current Week</button>
+      <button class="nav-tab" onclick="showTab('archive')">🗂 Archive</button>
+      <button class="nav-tab" onclick="showTab('reports')">📊 Reports</button>
     </div>
 
-    <div class="section">
-      <div class="section-head">
-        <div class="section-title"><span class="dot dot-green"></span>Incoming Leads</div>
+    <!-- Current Week -->
+    <div class="tab-panel active" id="tab-current">
+
+      <div class="section">
+        <div class="section-head">
+          <div class="section-title"><span class="dot dot-blue"></span>LinkedIn</div>
+        </div>
+        <div class="stat-grid">
+          <div class="stat"><span class="stat-name">Requests Sent</span><input type="number" id="li-sent" placeholder="0" min="0" /></div>
+          <div class="stat"><span class="stat-name">Connections</span><input type="number" id="li-conn" placeholder="0" min="0" /></div>
+          <div class="stat"><span class="stat-name">Messages Sent</span><input type="number" id="li-msgs" placeholder="0" min="0" /></div>
+        </div>
+        <div class="stat-grid-2">
+          <div class="stat"><span class="stat-name">Replies Received</span><input type="number" id="li-replies" placeholder="0" min="0" /></div>
+          <div class="stat"><span class="stat-name">Meetings Booked</span><input type="number" id="li-meetings" placeholder="0" min="0" /></div>
+        </div>
+        <div class="field"><label>Notes</label><textarea id="li-notes" placeholder="Key conversations, what worked..."></textarea></div>
       </div>
-      <div class="leads-bar" id="leads-bar">
-        <span class="total">Total: 0</span>
-        <span>🔴 Hot: 0</span><span>🟡 Warm: 0</span><span>🔵 Cold: 0</span>
+
+      <div class="section">
+        <div class="section-head">
+          <div class="section-title"><span class="dot dot-green"></span>Incoming Leads</div>
+        </div>
+        <div class="leads-bar" id="leads-bar">
+          <span class="total">Total: 0</span>
+          <span>🔴 Hot: 0</span><span>🟡 Warm: 0</span><span>🔵 Cold: 0</span>
+        </div>
+        <div id="leads-list"></div>
+        <button class="btn-add" onclick="addLead()">+ Add lead</button>
+        <div class="field"><label>General Comment</label><textarea id="leads-note" placeholder="Observations, lead quality..."></textarea></div>
       </div>
-      <div id="leads-list"></div>
-      <button class="btn-add" onclick="addLead()">+ Add lead</button>
-      <div class="field"><label>General Comment</label><textarea id="leads-note" placeholder="Observations, lead quality..."></textarea></div>
+
+      <div class="section">
+        <div class="section-head">
+          <div class="section-title"><span class="dot dot-purple"></span>Exhibition</div>
+          <div class="toggle-wrap">
+            <span class="toggle-hint">Was there an event?</span>
+            <label class="toggle">
+              <input type="checkbox" id="ex-on" onchange="toggleEx()" />
+              <span class="t-slider"></span>
+            </label>
+          </div>
+        </div>
+        <div class="ex-body" id="ex-body">
+          <div class="ex-divider"></div>
+          <div class="row-2" style="margin-bottom:14px">
+            <div class="field" style="margin:0"><label>Event Name</label><input type="text" id="ex-name" placeholder="SiGMA Europe 2026" /></div>
+            <div class="field" style="margin:0"><label>Location</label><input type="text" id="ex-loc" placeholder="Malta, Valletta" /></div>
+          </div>
+          <div class="field"><label>Dates</label><input type="text" id="ex-dates" placeholder="Nov 17–19" /></div>
+          <div class="field"><label>What Was Done</label><textarea id="ex-done" placeholder="Attendance, meetings, booth..."></textarea></div>
+          <div class="field"><label>New Contacts Count</label><input type="text" id="ex-count" placeholder="0" style="width:120px" /></div>
+          <div class="field"><label>Key Contacts</label><textarea id="ex-contacts" placeholder="Name, company..." style="min-height:64px"></textarea></div>
+          <div class="field"><label>Follow-up Plan</label><textarea id="ex-followup" placeholder="Who needs follow-up and when..."></textarea></div>
+          <div class="ex-tabs">
+            <button class="ex-tab active" id="tab-scheduled" onclick="switchTab('scheduled')">📅 Scheduled Meetings</button>
+            <button class="ex-tab" id="tab-inprogress" onclick="switchTab('inprogress')">⏳ In Progress</button>
+          </div>
+          <div id="panel-scheduled">
+            <div id="scheduled-list"></div>
+            <button class="btn-add" onclick="addMeeting('scheduled')" style="margin-bottom:0">+ Add meeting</button>
+          </div>
+          <div id="panel-inprogress" style="display:none">
+            <div id="inprogress-list"></div>
+            <button class="btn-add" onclick="addMeeting('inprogress')" style="margin-bottom:0">+ Add company</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-head">
+          <div class="section-title"><span class="dot dot-orange"></span>Notes</div>
+        </div>
+        <div id="notes-list"></div>
+        <button class="btn-add" onclick="addNote()">+ Add note</button>
+      </div>
+
+      <button class="btn-generate" onclick="generate()">Generate Weekly Report</button>
+      <button class="btn-newweek" onclick="saveAndNewWeek()">✅ Save & Start New Week</button>
+      <button class="btn-clear" onclick="clearAll()">🗑 Clear current week</button>
+
+      <div class="section output" id="out-block">
+        <div class="out-head">
+          <div class="section-title"><span class="dot dot-yellow"></span>Ready Report</div>
+          <button class="btn-copy" id="copy-btn" onclick="copyText()">Copy</button>
+        </div>
+        <pre id="out-text"></pre>
+      </div>
+
     </div>
 
-    <div class="section">
-      <div class="section-head">
-        <div class="section-title"><span class="dot dot-purple"></span>Exhibition</div>
-        <div class="toggle-wrap">
-          <span class="toggle-hint">Was there an event?</span>
-          <label class="toggle">
-            <input type="checkbox" id="ex-on" onchange="toggleEx()" />
-            <span class="t-slider"></span>
-          </label>
+    <!-- Archive -->
+    <div class="tab-panel" id="tab-archive">
+      <div class="section">
+        <div class="section-head">
+          <div class="section-title"><span class="dot dot-blue"></span>Previous Weeks</div>
         </div>
-      </div>
-      <div class="ex-body" id="ex-body">
-        <div class="ex-divider"></div>
-        <div class="row-2" style="margin-bottom:14px">
-          <div class="field" style="margin:0"><label>Event Name</label><input type="text" id="ex-name" placeholder="SiGMA Europe 2026" /></div>
-          <div class="field" style="margin:0"><label>Location</label><input type="text" id="ex-loc" placeholder="Malta, Valletta" /></div>
-        </div>
-        <div class="field"><label>Dates</label><input type="text" id="ex-dates" placeholder="Nov 17–19" /></div>
-        <div class="field"><label>What Was Done</label><textarea id="ex-done" placeholder="Attendance, meetings, booth..."></textarea></div>
-        <div class="field"><label>New Contacts Count</label><input type="text" id="ex-count" placeholder="0" style="width:120px" /></div>
-        <div class="field"><label>Key Contacts</label><textarea id="ex-contacts" placeholder="Name, company..." style="min-height:64px"></textarea></div>
-        <div class="field"><label>Follow-up Plan</label><textarea id="ex-followup" placeholder="Who needs follow-up and when..."></textarea></div>
-        <div class="ex-tabs">
-          <button class="ex-tab active" id="tab-scheduled" onclick="switchTab('scheduled')">📅 Scheduled Meetings</button>
-          <button class="ex-tab" id="tab-inprogress" onclick="switchTab('inprogress')">⏳ In Progress</button>
-        </div>
-        <div id="panel-scheduled">
-          <div id="scheduled-list"></div>
-          <button class="btn-add" onclick="addMeeting('scheduled')" style="margin-bottom:0">+ Add meeting</button>
-        </div>
-        <div id="panel-inprogress" style="display:none">
-          <div id="inprogress-list"></div>
-          <button class="btn-add" onclick="addMeeting('inprogress')" style="margin-bottom:0">+ Add company</button>
-        </div>
+        <div id="archive-list"><div class="archive-empty">No archived weeks yet</div></div>
       </div>
     </div>
 
-    <div class="section">
-      <div class="section-head">
-        <div class="section-title"><span class="dot dot-orange"></span>Notes</div>
+    <!-- Reports -->
+    <div class="tab-panel" id="tab-reports">
+      <div class="section">
+        <div class="section-head">
+          <div class="section-title"><span class="dot dot-red"></span>Generate Report</div>
+        </div>
+        <div class="report-selector">
+          <button class="report-type-btn active" id="btn-monthly" onclick="setReportType('monthly')">📅 Monthly</button>
+          <button class="report-type-btn" id="btn-quarterly" onclick="setReportType('quarterly')">📊 Quarterly</button>
+        </div>
+        <div class="field">
+          <label id="period-label">Select Month</label>
+          <select id="period-select" class="period-select"></select>
+        </div>
+        <button class="btn-generate" onclick="generatePeriodReport()">Generate Report</button>
       </div>
-      <div id="notes-list"></div>
-      <button class="btn-add" onclick="addNote()">+ Add note</button>
-    </div>
-
-    <button class="btn-generate" onclick="generate()">Generate Report</button>
-    <button class="btn-clear" onclick="clearAll()">🗑 Clear & start new week</button>
-
-    <div class="section output" id="out-block">
-      <div class="out-head">
-        <div class="section-title"><span class="dot dot-yellow"></span>Ready Report</div>
-        <button class="btn-copy" id="copy-btn" onclick="copyText()">Copy</button>
+      <div class="section output" id="period-out-block">
+        <div class="out-head">
+          <div class="section-title"><span class="dot dot-yellow"></span>Ready Report</div>
+          <button class="btn-copy" id="period-copy-btn" onclick="copyPeriodText()">Copy</button>
+        </div>
+        <pre id="period-out-text"></pre>
       </div>
-      <pre id="out-text"></pre>
     </div>
 
   </div>
@@ -253,7 +318,7 @@
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
 import { getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
-import { getDatabase, ref, set, onValue } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
+import { getDatabase, ref, set, get, onValue, remove } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBBhO0YFSE0zIvThmiEuAiTha0gDEPffkI",
@@ -268,9 +333,11 @@ const firebaseConfig = {
 const app  = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db   = getDatabase(app);
-const DB_PATH = 'weekly-report/data';
+const CURRENT_PATH = 'weekly-report/current';
+const ARCHIVE_PATH = 'weekly-report/archive';
+
 const counters = { lead: 0, note: 0, scheduled: 0, inprogress: 0 };
-let saveTimer, isLoading = true;
+let saveTimer, isLoading = true, currentReportType = 'monthly';
 
 // ── Auth ──
 window.doLogin = async function() {
@@ -278,27 +345,19 @@ window.doLogin = async function() {
   const pass  = document.getElementById('login-pass').value;
   const err   = document.getElementById('login-error');
   err.textContent = '';
-  try {
-    await signInWithEmailAndPassword(auth, email, pass);
-  } catch(e) {
-    err.textContent = 'Wrong email or password';
-  }
+  try { await signInWithEmailAndPassword(auth, email, pass); }
+  catch(e) { err.textContent = 'Wrong email or password'; }
 };
-
-window.doLogout = async function() {
-  await signOut(auth);
-};
-
-// Enter key on login
-document.getElementById('login-pass').addEventListener('keydown', e => {
-  if (e.key === 'Enter') window.doLogin();
-});
+window.doLogout = async function() { await signOut(auth); };
+document.getElementById('login-pass').addEventListener('keydown', e => { if (e.key === 'Enter') window.doLogin(); });
 
 onAuthStateChanged(auth, user => {
   if (user) {
     document.getElementById('login-screen').style.display = 'none';
     document.getElementById('app-screen').classList.add('on');
     initLoad();
+    loadArchive();
+    populatePeriodSelect();
   } else {
     document.getElementById('login-screen').style.display = 'flex';
     document.getElementById('app-screen').classList.remove('on');
@@ -318,6 +377,16 @@ function dotStatus(cls, txt) {
 // ── Auto-save ──
 document.addEventListener('input',  () => { if (!isLoading) { clearTimeout(saveTimer); saveTimer = setTimeout(persist, 1000); } });
 document.addEventListener('change', () => { if (!isLoading) { clearTimeout(saveTimer); saveTimer = setTimeout(persist, 1000); } });
+
+// ── Nav tabs ──
+window.showTab = function(tab) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-tab').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + tab).classList.add('active');
+  event.target.classList.add('active');
+  if (tab === 'archive') loadArchive();
+  if (tab === 'reports') populatePeriodSelect();
+};
 
 // ── Snapshot ──
 function snapshot() {
@@ -341,16 +410,14 @@ function snapshot() {
 async function persist() {
   dotStatus('saving', 'Saving…');
   try {
-    await set(ref(db, DB_PATH), snapshot());
+    await set(ref(db, CURRENT_PATH), snapshot());
     dotStatus('', 'Saved ✓');
-  } catch(e) {
-    dotStatus('error', 'Save failed');
-  }
+  } catch(e) { dotStatus('error', 'Save failed'); }
 }
 
-// ── Load ──
+// ── Load current ──
 function initLoad() {
-  onValue(ref(db, DB_PATH), snap => {
+  onValue(ref(db, CURRENT_PATH), snap => {
     const d = snap.val();
     if (!d) { initWeek(); isLoading = false; dotStatus('', 'Saved ✓'); return; }
     isLoading = true;
@@ -362,9 +429,7 @@ function initLoad() {
     sv('ex-name', d.exName); sv('ex-loc', d.exLoc); sv('ex-dates', d.exDates);
     sv('ex-done', d.exDone); sv('ex-count', d.exCount);
     sv('ex-contacts', d.exContacts); sv('ex-followup', d.exFollowup);
-    ['leads-list','notes-list','scheduled-list','inprogress-list'].forEach(id => {
-      document.getElementById(id).innerHTML = '';
-    });
+    ['leads-list','notes-list','scheduled-list','inprogress-list'].forEach(id => { document.getElementById(id).innerHTML = ''; });
     counters.lead = 0; counters.note = 0; counters.scheduled = 0; counters.inprogress = 0;
     (d.leads      || []).forEach(l => addLead(l));
     (d.notes      || []).forEach(n => addNote(n));
@@ -383,6 +448,209 @@ function initWeek() {
   const iso = x => x.toISOString().slice(0, 10);
   document.getElementById('wStart').value = iso(mon);
   document.getElementById('wEnd').value   = iso(fri);
+}
+
+// ── Save & New Week ──
+window.saveAndNewWeek = async function() {
+  if (!confirm('Save current week to archive and start a new one?')) return;
+  const data = snapshot();
+  const weekKey = (data.wStart || new Date().toISOString().slice(0,10)).replace(/-/g, '');
+  dotStatus('saving', 'Archiving…');
+  try {
+    await set(ref(db, ARCHIVE_PATH + '/' + weekKey), data);
+    await remove(ref(db, CURRENT_PATH));
+    dotStatus('', 'Saved ✓');
+    location.reload();
+  } catch(e) { dotStatus('error', 'Failed'); }
+};
+
+// ── Load Archive ──
+async function loadArchive() {
+  const snap = await get(ref(db, ARCHIVE_PATH));
+  const list = document.getElementById('archive-list');
+  if (!snap.exists()) { list.innerHTML = '<div class="archive-empty">No archived weeks yet</div>'; return; }
+  const weeks = snap.val();
+  const keys = Object.keys(weeks).sort().reverse();
+  list.innerHTML = '';
+  keys.forEach(k => {
+    const w = weeks[k];
+    const leads = (w.leads || []).length;
+    const hot   = (w.leads || []).filter(l => l.temp === 'hot').length;
+    const el = document.createElement('div');
+    el.className = 'archive-item';
+    el.innerHTML = `
+      <div>
+        <div class="archive-item-title">${fmtDate(w.wStart)} – ${fmtDate(w.wEnd)}</div>
+        <div class="archive-item-meta">Leads: ${leads} · 🔴 Hot: ${hot} · Meetings: ${w.liMeetings||0}</div>
+      </div>
+      <span class="archive-item-arrow">›</span>`;
+    el.onclick = () => showArchivedWeek(w);
+    list.appendChild(el);
+  });
+}
+
+function showArchivedWeek(d) {
+  // Switch to current tab and load archived data for viewing
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-tab').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-current').classList.add('active');
+  document.querySelector('.nav-tab').classList.add('active');
+
+  isLoading = true;
+  sv('wStart', d.wStart); sv('wEnd', d.wEnd);
+  sv('li-sent', d.liSent); sv('li-conn', d.liConn); sv('li-msgs', d.liMsgs);
+  sv('li-replies', d.liReplies); sv('li-meetings', d.liMeetings); sv('li-notes', d.liNotes);
+  sv('leads-note', d.leadsNote);
+  document.getElementById('ex-on').checked = !!d.exOn;
+  toggleEx();
+  sv('ex-name', d.exName); sv('ex-loc', d.exLoc); sv('ex-dates', d.exDates);
+  sv('ex-done', d.exDone); sv('ex-count', d.exCount);
+  sv('ex-contacts', d.exContacts); sv('ex-followup', d.exFollowup);
+  ['leads-list','notes-list','scheduled-list','inprogress-list'].forEach(id => { document.getElementById(id).innerHTML = ''; });
+  counters.lead = 0; counters.note = 0; counters.scheduled = 0; counters.inprogress = 0;
+  (d.leads      || []).forEach(l => addLead(l));
+  (d.notes      || []).forEach(n => addNote(n));
+  (d.scheduled  || []).forEach(m => addMeeting('scheduled', m));
+  (d.inprogress || []).forEach(m => addMeeting('inprogress', m));
+  refreshBar();
+  isLoading = true; // keep true so edits don't overwrite current
+  generate();
+  setTimeout(() => { document.getElementById('out-block').scrollIntoView({behavior:'smooth'}); }, 100);
+}
+
+// ── Period select ──
+window.setReportType = function(type) {
+  currentReportType = type;
+  document.getElementById('btn-monthly').classList.toggle('active', type === 'monthly');
+  document.getElementById('btn-quarterly').classList.toggle('active', type === 'quarterly');
+  document.getElementById('period-label').textContent = type === 'monthly' ? 'Select Month' : 'Select Quarter';
+  populatePeriodSelect();
+};
+
+async function populatePeriodSelect() {
+  const snap = await get(ref(db, ARCHIVE_PATH));
+  const sel = document.getElementById('period-select');
+  sel.innerHTML = '';
+  const weeks = snap.exists() ? snap.val() : {};
+  // Also include current week
+  const cur = (await get(ref(db, CURRENT_PATH))).val();
+  if (cur) weeks['current'] = cur;
+
+  const periods = new Set();
+  Object.values(weeks).forEach(w => {
+    if (!w.wStart) return;
+    const [y, m] = w.wStart.split('-');
+    if (currentReportType === 'monthly') {
+      periods.add(`${y}-${m}`);
+    } else {
+      const q = Math.ceil(parseInt(m) / 3);
+      periods.add(`${y}-Q${q}`);
+    }
+  });
+
+  if (periods.size === 0) {
+    const opt = document.createElement('option');
+    opt.textContent = 'No data yet';
+    sel.appendChild(opt);
+    return;
+  }
+
+  const mo = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  [...periods].sort().reverse().forEach(p => {
+    const opt = document.createElement('option');
+    opt.value = p;
+    if (currentReportType === 'monthly') {
+      const [y, m] = p.split('-');
+      opt.textContent = `${mo[parseInt(m)-1]} ${y}`;
+    } else {
+      opt.textContent = p.replace('-', ' ');
+    }
+    sel.appendChild(opt);
+  });
+}
+
+window.generatePeriodReport = async function() {
+  const period = document.getElementById('period-select').value;
+  if (!period) return;
+
+  const snap = await get(ref(db, ARCHIVE_PATH));
+  const weeks = snap.exists() ? snap.val() : {};
+  const cur = (await get(ref(db, CURRENT_PATH))).val();
+  if (cur) weeks['current'] = cur;
+
+  const filtered = Object.values(weeks).filter(w => {
+    if (!w.wStart) return false;
+    const [y, m] = w.wStart.split('-');
+    if (currentReportType === 'monthly') return `${y}-${m}` === period;
+    const q = Math.ceil(parseInt(m) / 3);
+    return `${y}-Q${q}` === period;
+  }).sort((a, b) => (a.wStart||'').localeCompare(b.wStart||''));
+
+  if (!filtered.length) { alert('No weeks found for this period.'); return; }
+
+  const D = '─'.repeat(38), T = '═'.repeat(46);
+  const mo = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  const [y, mp] = period.split('-');
+  const title = currentReportType === 'monthly'
+    ? `${mo[parseInt(mp)-1]} ${y}`
+    : `${period.replace('-', ' ')} ${y}`;
+
+  // Totals
+  let totSent=0,totConn=0,totMsgs=0,totReplies=0,totMeetings=0;
+  let totLeads=0,totHot=0,totWarm=0,totCold=0;
+  filtered.forEach(w => {
+    totSent     += parseInt(w.liSent||0);
+    totConn     += parseInt(w.liConn||0);
+    totMsgs     += parseInt(w.liMsgs||0);
+    totReplies  += parseInt(w.liReplies||0);
+    totMeetings += parseInt(w.liMeetings||0);
+    const leads = w.leads || [];
+    totLeads += leads.length;
+    totHot   += leads.filter(l=>l.temp==='hot').length;
+    totWarm  += leads.filter(l=>l.temp==='warm').length;
+    totCold  += leads.filter(l=>l.temp==='cold').length;
+  });
+
+  let r = `📊 ${currentReportType.toUpperCase()} REPORT — ${title}\n${T}\n\n`;
+  r += `🔗 LINKEDIN TOTAL\n${D}\n`;
+  r += `Requests Sent:    ${totSent}\nConnections:      ${totConn}\nMessages Sent:    ${totMsgs}\nReplies Received: ${totReplies}\nMeetings Booked:  ${totMeetings}\n\n`;
+  r += `📥 LEADS TOTAL\n${D}\n`;
+  r += `Total: ${totLeads}  🔴 ${totHot}  🟡 ${totWarm}  🔵 ${totCold}\n\n`;
+
+  r += `📅 WEEKS BREAKDOWN\n${D}\n`;
+  filtered.forEach((w, i) => {
+    const leads = w.leads || [];
+    const hot  = leads.filter(l=>l.temp==='hot').length;
+    const warm = leads.filter(l=>l.temp==='warm').length;
+    const cold = leads.filter(l=>l.temp==='cold').length;
+    r += `\nWeek ${i+1}: ${fmtDate(w.wStart)} – ${fmtDate(w.wEnd)}\n`;
+    r += `  LinkedIn: ${w.liSent||0} sent · ${w.liConn||0} conn · ${w.liMeetings||0} meetings\n`;
+    r += `  Leads: ${leads.length} total · 🔴${hot} 🟡${warm} 🔵${cold}\n`;
+    if (w.exOn && w.exName) r += `  Exhibition: ${w.exName}${w.exLoc ? ' · '+w.exLoc : ''}\n`;
+  });
+
+  r += `\n${T}\nGenerated: ${new Date().toLocaleString('en-GB')}`;
+
+  document.getElementById('period-out-text').textContent = r;
+  document.getElementById('period-out-block').classList.add('on');
+  setTimeout(() => document.getElementById('period-out-block').scrollIntoView({behavior:'smooth'}), 50);
+};
+
+window.copyPeriodText = function() {
+  const text = document.getElementById('period-out-text').textContent;
+  const b = document.getElementById('period-copy-btn');
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(() => {
+      b.textContent='✓ Copied'; b.classList.add('done');
+      setTimeout(() => { b.textContent='Copy'; b.classList.remove('done'); }, 2000);
+    }).catch(fallbackSelectPeriod);
+  } else fallbackSelectPeriod();
+};
+function fallbackSelectPeriod() {
+  const pre = document.getElementById('period-out-text');
+  const range = document.createRange(); range.selectNodeContents(pre);
+  const sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(range);
+  try { document.execCommand('copy'); } catch(e) {}
 }
 
 // ── Exhibition ──
@@ -410,12 +678,16 @@ window.addMeeting = function(type, data) {
     </div>
     <div class="field"><label>Company / Website</label><input type="text" class="mc-website" placeholder="company.com" /></div>
     <div class="field"><label>Company LinkedIn</label><input type="text" class="mc-linkedin" placeholder="linkedin.com/company/..." /></div>
-    <div class="field"><label>Contact / LinkedIn / Stand</label><input type="text" class="mc-contact" placeholder="John Smith · linkedin.com/in/... · Stand B12" /></div>`;
+    <div class="field"><label>Contact / LinkedIn / Stand</label><input type="text" class="mc-contact" placeholder="John Smith · linkedin.com/in/... · Stand B12" /></div>
+    <div class="field"><label>Telegram</label><input type="text" class="mc-telegram" placeholder="@username" /></div>
+    <div class="field"><label>Notes</label><textarea class="mc-notes" placeholder="Key topics, follow-up, impressions..."></textarea></div>`;
   document.getElementById(type + '-list').appendChild(el);
   if (data) {
     if (data.website)  el.querySelector('.mc-website').value  = data.website;
     if (data.linkedin) el.querySelector('.mc-linkedin').value = data.linkedin;
     if (data.contact)  el.querySelector('.mc-contact').value  = data.contact;
+    if (data.telegram) el.querySelector('.mc-telegram').value = data.telegram;
+    if (data.notes)    el.querySelector('.mc-notes').value    = data.notes;
   }
 };
 window.removeMeeting = function(uid) {
@@ -427,6 +699,8 @@ function getMeetings(type) {
     website:  c.querySelector('.mc-website')  ? c.querySelector('.mc-website').value  : '',
     linkedin: c.querySelector('.mc-linkedin') ? c.querySelector('.mc-linkedin').value : '',
     contact:  c.querySelector('.mc-contact')  ? c.querySelector('.mc-contact').value  : '',
+    telegram: c.querySelector('.mc-telegram') ? c.querySelector('.mc-telegram').value : '',
+    notes:    c.querySelector('.mc-notes')    ? c.querySelector('.mc-notes').value    : '',
   }));
 }
 
@@ -477,7 +751,7 @@ window.removeLead = function(uid) {
 };
 window.refreshBar = function() {
   const temps = [...document.querySelectorAll('#leads-list .lf-temp')];
-  let h = 0, w = 0, c = 0;
+  let h=0,w=0,c=0;
   temps.forEach(s => { if (s.value==='hot') h++; else if (s.value==='warm') w++; else c++; });
   document.getElementById('leads-bar').innerHTML = `
     <span class="total">Total: ${h+w+c}</span>
@@ -521,18 +795,19 @@ function getNotes() {
 
 // ── Clear ──
 window.clearAll = async function() {
-  if (!confirm('Clear all data and start a new week?')) return;
-  await set(ref(db, DB_PATH), null);
+  if (!confirm('Clear current week data? (This will NOT delete the archive)')) return;
+  await remove(ref(db, CURRENT_PATH));
   location.reload();
 };
 
-// ── Generate ──
+// ── Generate weekly ──
 function fmtDate(s) {
   if (!s) return '?';
   const [y, m, d] = s.split('-').map(Number);
   const mo = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
   return `${mo[m-1]} ${d}, ${y}`;
 }
+
 window.generate = function() {
   const ws=fmtDate(gv('wStart')), we=fmtDate(gv('wEnd'));
   const sent=gv('li-sent').trim()||'0', conn=gv('li-conn').trim()||'0', msgs=gv('li-msgs').trim()||'0';
@@ -556,8 +831,8 @@ window.generate = function() {
     if (exDone) r+=`\nWhat Was Done:\n${exDone}\n`; r+=`\nNew Contacts: ${exCount}\n`;
     if (exCont) r+=`\nKey Contacts:\n${exCont}\n`; if (exFu) r+=`\nFollow-up Plan:\n${exFu}\n`;
     const sched=getMeetings('scheduled'), inp=getMeetings('inprogress');
-    if (sched.length) { r+=`\n📅 Scheduled Meetings:\n`; sched.forEach((m,i) => { r+=`${i+1}. ${m.website||'—'}\n   LinkedIn: ${m.linkedin||'—'}\n   Contact: ${m.contact||'—'}\n\n`; }); }
-    if (inp.length)   { r+=`⏳ In Progress:\n`;          inp.forEach((m,i)   => { r+=`${i+1}. ${m.website||'—'}\n   LinkedIn: ${m.linkedin||'—'}\n   Contact: ${m.contact||'—'}\n\n`; }); }
+    if (sched.length) { r+=`\n📅 Scheduled Meetings:\n`; sched.forEach((m,i) => { r+=`${i+1}. ${m.website||'—'}\n   LinkedIn: ${m.linkedin||'—'}\n   Contact: ${m.contact||'—'}\n   Telegram: ${m.telegram||'—'}\n   Notes: ${m.notes||'—'}\n\n`; }); }
+    if (inp.length)   { r+=`⏳ In Progress:\n`;           inp.forEach((m,i) => { r+=`${i+1}. ${m.website||'—'}\n   LinkedIn: ${m.linkedin||'—'}\n   Contact: ${m.contact||'—'}\n   Telegram: ${m.telegram||'—'}\n   Notes: ${m.notes||'—'}\n\n`; }); }
   }
   if (nlist.length) { r+=`📌 NOTES\n${D}\n`; nlist.forEach((n,i) => { r+=`${i+1}. ${n}\n`; }); r+='\n'; }
   r+=`${T}\nGenerated: ${new Date().toLocaleString('en-GB')}`;
@@ -566,7 +841,6 @@ window.generate = function() {
   setTimeout(() => ob.scrollIntoView({behavior:'smooth', block:'start'}), 50);
 };
 
-// ── Copy ──
 window.copyText = function() {
   const text=document.getElementById('out-text').textContent, b=document.getElementById('copy-btn');
   if (navigator.clipboard && navigator.clipboard.writeText) {
